@@ -36,6 +36,22 @@ This work uses the publicly available **MIMIC-III v1.4** database:
 
 ---
 
+## Results
+
+# train Gradient-Boost baseline
+python scripts/main_classification.py
+
+| Classifier                | Precision | Recall | **F1 Score** |
+|---------------------------|-----------|--------|-------------|
+| Logistic Regression       | 0.34      | **0.65** | **0.65** |
+| Linear SVC                | 0.31      | 0.62   | 0.63 |
+| Random Forest             | **0.43**  | 0.34   | 0.64 |
+| Support Vector Machine    | 0.42      | 0.20   | 0.59 |
+| Adaptive Boosting         | 0.38      | 0.17   | 0.57 |
+| Decision Tree             | 0.25      | 0.34   | 0.57 |
+| K-Nearest Neighbor (KNN)  | 0.21      | 0.48   | 0.54 |
+
+
 ```bash
 # clone
 git clone https://github.com/AkshatP0285/Prediction-of-Mortality-Rate-of-Heart-Failure-Patients-Admitted-to-ICU.git
@@ -44,7 +60,4 @@ cd Prediction-of-Mortality-Rate-of-Heart-Failure-Patients-Admitted-to-ICU
 # set up env
 python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-
-# train Gradient-Boost baseline
-python scripts/main_classification.py
 
