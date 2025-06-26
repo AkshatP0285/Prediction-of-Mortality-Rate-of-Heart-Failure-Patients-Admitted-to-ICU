@@ -38,9 +38,6 @@ This work uses the publicly available **MIMIC-III v1.4** database:
 
 ## Results
 
-# train Gradient-Boost baseline
-python scripts/main_classification.py
-
 | Classifier                | Precision | Recall | **F1 Score** |
 |---------------------------|-----------|--------|-------------|
 | Logistic Regression       | 0.34      | **0.65** | **0.65** |
