@@ -1,2 +1,50 @@
-# Prediction-of-Mortality-Rate-of-Heart-Failure-Patients-Admitted-to-ICU
-The objective of this project is to predict the factors of hospital mortality for the patients who admitted to ICUs (intensive care units) due to heart failure.The data is collected from MIMIC-III database (version 1.4, 2016), which is a publicly available critical care database containing de-identified data on 46,520 patients and 58,976 admissions to the ICU of the Beth Israel Deaconess Medical Center, Boston, USA, between 1 June, 2001 and 31 October, 2012.
+<!-- Project title banner (optional) -->
+<h1 align="center">
+  🏥 Mortality-Risk Prediction for Heart-Failure ICU Patients
+</h1>
+<p align="center">
+  <em>Machine-learning pipeline built on the MIMIC-III database to predict
+  in-hospital mortality and identify key clinical risk factors for
+  heart-failure patients admitted to intensive-care units.</em>
+</p>
+
+---
+
+## 📌 Motivation
+Accurately predicting the **risk of in-hospital death** for heart-failure
+(HF) patients on ICU admission helps clinicians:
+
+* prioritise high-risk cases for aggressive management  
+* allocate limited critical-care resources  
+* discuss prognosis with families early  
+* design decision-support tools that go beyond traditional severity scores
+  such as APACHE-II/IV and SOFA
+
+---
+
+## 🗃️ Data Source
+This work uses the publicly available **MIMIC-III v1.4** database:
+
+| Item | Value |
+|------|-------|
+| ICU admissions in MIMIC-III | 58 ,976 |
+| HF admissions screened (ICD-9 codes 398.91, 428.xx) | 13 ,389 |
+| Final cohort after cleaning (age ≥ 18, first ICU stay, <10 % missing) | **≈ 1 ,200** patients |
+
+> **Note** Direct access to raw MIMIC-III requires completing the
+> PhysioNet credentialing process.
+
+---
+
+```bash
+# clone
+git clone https://github.com/AkshatP0285/Prediction-of-Mortality-Rate-of-Heart-Failure-Patients-Admitted-to-ICU.git
+cd Prediction-of-Mortality-Rate-of-Heart-Failure-Patients-Admitted-to-ICU
+
+# set up env
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+
+# train Gradient-Boost baseline
+python scripts/main_classification.py
+
